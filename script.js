@@ -14,7 +14,7 @@ const current2EL = document.getElementById('current--1');
 let scores, currentScore, activePlayer, playing;
 
 const init = function () {
-  score = [0, 0];
+  scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
   playing = true;
@@ -73,14 +73,14 @@ btnRoll.addEventListener('click', function () {
 btnHold.addEventListener('click', function () {
   if (playing) {
     // 1. Add current score to active player's score
-    score[activePlayer] += currentScore;
+    scores[activePlayer] += currentScore;
     // scores[1] = scores[1] + currentScore
     document.getElementById(`score--${activePlayer}`).textContent =
-      score[activePlayer];
+      scores[activePlayer];
 
     // 2. Check if player's score is >= 100
 
-    if (score[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 100) {
       // Finish the game
       playing = false;
       diceEl.classList.add('hidden');
